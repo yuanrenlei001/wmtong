@@ -29,10 +29,9 @@ export default {
         {title:'首页',path:'/'},
         {title:'关于我们',path:'about'},
         {title:'产品中心',path:'project'},
-        {title:'应用领域',path:'about'},
-        {title:'应用领域',path:'about'},
-        {title:'技术服务',path:'about'},
-        {title:'新闻中心',path:'about'},
+        {title:'应用领域',path:'application'},
+        {title:'技术服务',path:'service'},
+        {title:'新闻中心',path:'news'},
         {title:'人力资源',path:'about'},
         {title:'联系我们',path:'about'}
       ]

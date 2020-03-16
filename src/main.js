@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import ElementUI from 'element-ui'
 Vue.use(VueAwesomeSwiper)
+Vue.use(ElementUI);
 Vue.config.productionTip = false
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */

@@ -202,7 +202,7 @@ export default {
   .applicationDetail ul {width:105%;position: relative;overflow: hidden;}
   .applicationDetail li {width:380px;height:380px;float:left;margin-right: 20px;margin-bottom: 20px;}
   .applicationDetail img {width:380px;height:280px;margin-bottom: -4px;}
-  .applicationDetail div {width:100%;height:100px;}
+  .applicationDetail div {width:100%;height:100px;background: #fff;}
   .applicationDetail div span {display: block;text-align: center;}
   .applicationDetail div span:first-child {font-size: 14px;color: #6c6d6d;line-height: 48px;}
   .applicationDetail div span:last-child {font-size: 20px;color: #333;line-height: 38px;}

@@ -24,10 +24,10 @@
 <script>
     import Tabbar from '@/components/tabbar'
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
-    import child0 from '@/components/project/product01.vue'
-    import child1 from '@/components/project/product02.vue'
-    import child2 from '@/components/project/product03.vue'
-    import child3 from '@/components/project/product04.vue'
+    import child0 from '@/components/application/product01.vue'
+    import child1 from '@/components/application/product02.vue'
+    import child2 from '@/components/application/product03.vue'
+    import child3 from '@/components/application/product04.vue'
 
     import Swiper from "swiper";//引入swiper
     import 'swiper/css/swiper.min.css';
@@ -41,12 +41,11 @@
                 msg: 'Welcome to Your Vue.js App',
                 showMinShopTab: true,
                 addClass:'',
-                img:require('@/assets/img/product/product.jpg'),
+                img:require('@/assets/img/news.jpg'),
                 topList:[
-                    {title:'产品优势'},
-                    {title:'电力管道'},
-                    {title:'通信管道'},
-                    {title:'产品佩剑'},
+                    {title:'企业资讯'},
+                    {title:'行业动态'},
+                    {title:'国家新闻'},
                 ],
                 active:0,
                 title:'',
