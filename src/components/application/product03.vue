@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-    import Swiper from "swiper";//引入swiper
+    import Swiper from "swiper";
     import 'swiper/css/swiper.min.css';
     export default {
         name: 'index',

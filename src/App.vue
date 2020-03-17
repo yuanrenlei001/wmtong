@@ -34,4 +34,6 @@ export default {
   ul,ol{
     list-style:none;
   }
+  .el-pagination.is-background .el-pager li:not(.disabled).active {background: #b71b30;}
+  .el-pagination.is-background .el-pager li:not(.disabled):hover {background: #b71b30;color: #fff;}
 </style>

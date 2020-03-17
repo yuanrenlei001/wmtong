@@ -17,19 +17,18 @@
         <child0  v-if="addClass == 0"></child0>
         <child1  v-if="addClass == 1"></child1>
         <child2  v-if="addClass == 2"></child2>
-        <child3  v-if="addClass == 3"></child3>
+
   </div>
 </template>
 
 <script>
     import Tabbar from '@/components/tabbar'
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
-    import child0 from '@/components/application/product01.vue'
-    import child1 from '@/components/application/product02.vue'
-    import child2 from '@/components/application/product03.vue'
-    import child3 from '@/components/application/product04.vue'
+    import child0 from '@/components/news/product01.vue'
+    import child1 from '@/components/news/product02.vue'
+    import child2 from '@/components/news/product03.vue'
 
-    import Swiper from "swiper";//引入swiper
+    import Swiper from "swiper";
     import 'swiper/css/swiper.min.css';
     export default {
         name: 'index',
@@ -57,7 +56,7 @@
             child0,
             child1,
             child2,
-            child3,
+
         },
         computed: {
         },

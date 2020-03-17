@@ -87,7 +87,7 @@
   import Tabbar from '@/components/tabbar'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
-  import Swiper from "swiper";//引入swiper
+  import Swiper from "swiper";
   import 'swiper/css/swiper.min.css';
 export default {
   name: 'index',
@@ -99,7 +99,7 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       showMinShopTab: true,
       addClass:'',
-      img:require('@/assets/img/about/aboutbg.jpg'),
+      img:require("@/assets/img/about/aboutbg.jpg"),
       topList:[
         {title:'公司介绍',path:'/'},
         {title:'企业文化',path:'about'},
@@ -123,47 +123,30 @@ export default {
   },
   methods: {
       onScroll() {
-          // 滚动监听器
-          // 获取所有锚点元素
           const navContents = document.querySelectorAll('.menuSort')
-          // 所有锚点元素的 offsetTop
           const offsetTopArr = []
           navContents.forEach(item => {
               offsetTopArr.push(item.offsetTop)
           })
-          // 获取当前文档流的 scrollTop
           const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-          // 定义当前点亮的导航下标
           let navIndex = 0
           for (let n = 0; n < offsetTopArr.length; n++) {
-              // 如果 scrollTop 大于等于第 n 个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-              // 那么此时导航索引就应该是 n 了
               if (scrollTop >= offsetTopArr[n]) {
                   navIndex = n
               }
           }
-          // 把下标赋值给 vue 的 data
           this.active = navIndex;
           console.log(this.active)
       },
       scrollTo(index) {
           this.addClass = index
-          // 获取目标的 offsetTop
-          // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
           const targetOffsetTop = document.querySelector(`.menuSort:nth-child(${index + 3})`).offsetTop
-          // 获取当前 offsetTop
           let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-          // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
           const STEP = 50
-          // 判断是往下滑还是往上滑
 
               smoothDown()
-          // 定义往下滑函数
           function smoothDown() {
-              // 如果当前 scrollTop 小于 targetOffsetTop 说明视口还没滑到指定位置
               if (scrollTop < targetOffsetTop) {
-                  // 如果和目标相差距离大于等于 STEP 就跳 STEP
-                  // 否则直接跳到目标点，目标是为了防止跳过了。
                   if (targetOffsetTop - scrollTop >= STEP) {
                       scrollTop += STEP
                   } else {
@@ -171,8 +154,6 @@ export default {
                   }
                   document.body.scrollTop = scrollTop
                   document.documentElement.scrollTop = scrollTop
-                  // 屏幕在绘制下一帧时会回调传给 requestAnimationFrame 的函数
-                  // 关于 requestAnimationFrame 可以自己查一下，在这种场景下，相比 setInterval 性价比更高
                   requestAnimationFrame(smoothDown)
               }
           }
@@ -185,16 +166,14 @@ export default {
       this.swiper1 = new Swiper(".banner1", {
           autoplay: false,
           pagination: {
-              //指示点
               el: ".swiper-pagination",
-              clickable :true //为true时点击指示点会切换slide
+              clickable :true
           },
-          grabCursor: true, //鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
+          grabCursor: true,
           slidesPerView: 3,
               spaceBetween: 30,
             slideShadows : true,
           loop: true,
-          // 如果需要前进后退按钮
           navigation: {
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
@@ -203,16 +182,14 @@ export default {
       this.swiper2 = new Swiper(".banner2", {
           autoplay: false,
           pagination: {
-              //指示点
               el: ".swiper-pagination2",
-              clickable :true //为true时点击指示点会切换slide
+              clickable :true
           },
-          grabCursor: true, //鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
+          grabCursor: true,
           slidesPerView: 3,
           spaceBetween: 30,
           slideShadows : true,
           loop: true,
-          // 如果需要前进后退按钮
           navigation: {
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
@@ -222,7 +199,6 @@ export default {
       this.title = this.$route.meta.title
   },
     destroy() {
-        // 必须移除监听器，不然当该vue组件被销毁了，监听器还在就会出错
         window.removeEventListener('scroll', this.onScroll)
     },
 

@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <div class="logo"><img src="@/assets/img/logo.png" alt=""></div>
-    <div class="search"><img src="@/assets/img/search.png" alt=""></div>
+    <div class="search" @click="goSearch()"><img src="@/assets/img/search.png" alt=""></div>
     <div class="OAbtn">企业OA</div>
     <div class="sort">
       <ul>
@@ -31,9 +31,9 @@ export default {
         {title:'产品中心',path:'project'},
         {title:'应用领域',path:'application'},
         {title:'技术服务',path:'service'},
-        {title:'新闻中心',path:'news'},
-        {title:'人力资源',path:'about'},
-        {title:'联系我们',path:'about'}
+        {title:'新闻资讯',path:'news'},
+        {title:'人力资源',path:'recuit'},
+        {title:'联系我们',path:'contact'}
       ]
     }
   },
@@ -42,7 +42,11 @@ export default {
       this.$router.push(url)
       console.log(index)
       this.addClass = index
-    }
+    },
+      goSearch(){
+          this.$router.push("/search")
+          this.addClass = '10'
+      }
   },
 }
 </script>
@@ -52,7 +56,7 @@ export default {
   .logo {float:left;margin-left: 80px;height:100%;}
   .logo img {width:280px;height:50px;vertical-align: middle;}
   .sort {float:right;}
-  .sort ul li  {height:100%;line-height: 100px;float:left;width:124px;text-align: center;position: relative;cursor: pointer;}
+  .sort ul li  {height:100%;line-height: 100px;float:left;text-align: center;position: relative;cursor: pointer;padding: 0 30px;}
   .sort ul li.active {color: #b71b30;}
   .sort ul li:before {
     content:'';
@@ -80,6 +84,6 @@ export default {
     top: 50%;
     margin: -15px 60px 0 60px;
   }
-  .search {float:right;margin-right: 80px;}
+  .search {float:right;margin-right: 80px;cursor: pointer;}
   .search img {width:20px;height:20px;}
 </style>

@@ -36,7 +36,7 @@
                 <p>{{item.title}}</p>
                 <p>{{item.text}}</p>
               </div>
-              <div class="showFiex" v-show="item.active">
+              <div class="showFiex" v-show="item.active" @click="goNews()">
                 <p>这是标题</p>
                 <p style="width:80%;position: relative;margin:40px auto 0;">按照相关管道安装配置，每根管道6米长，接头处必须配置一个直通按照相关按照相关管道安装配置，每根管道6米长，接头处必须配置一个直通按照相关按照相关管道安装配置，每根管道6米长，接头处必须配置一个直通按照相关</p>
                 <div class="more"><img src="@/assets/img/index/more.png" alt=""></div>
@@ -62,12 +62,7 @@
         <div class="applicationIcon07"><img src="@/assets/img/index/icon07.png" alt=""></div>
         <div class="applicationDetail">
           <ul>
-            <li><img src="@/assets/img/index/applicationTop.jpg" alt=""><div><span>油气输送行业</span><span>内蒙古神州硅业有限公司</span></div></li>
-            <li><img src="@/assets/img/index/applicationTop.jpg" alt=""><div><span>油气输送行业</span><span>内蒙古神州硅业有限公司</span></div></li>
-            <li><img src="@/assets/img/index/applicationTop.jpg" alt=""><div><span>油气输送行业</span><span>内蒙古神州硅业有限公司</span></div></li>
-            <li><img src="@/assets/img/index/applicationTop.jpg" alt=""><div><span>油气输送行业</span><span>内蒙古神州硅业有限公司</span></div></li>
-            <li><img src="@/assets/img/index/applicationTop.jpg" alt=""><div><span>油气输送行业</span><span>内蒙古神州硅业有限公司</span></div></li>
-            <li><img src="@/assets/img/index/applicationTop.jpg" alt=""><div><span>油气输送行业</span><span>内蒙古神州硅业有限公司</span></div></li>
+            <li v-for="item in applicationList" @click="goNews()"><img :src="item.img" alt=""><div><span>{{item.name}}</span><span>{{item.company}}</span></div></li>
           </ul>
         </div>
       </div>
@@ -91,6 +86,7 @@
         </div>
       </div>
     </div>
+    <el-backtop></el-backtop>
   </div>
 </template>
 
@@ -113,7 +109,15 @@ export default {
         {img:require('@/assets/img/index/banner.jpg'),title:'BMP管道',text:'按照相关管道安装配置，每根管道6米长，接头处必须配置一个直通按照相关'},
         {img:require('@/assets/img/index/banner.jpg'),title:'BMP管道',text:'按照相关管道安装配置，每根管道6米长，接头处必须配置一个直通按照相关'},
         {img:require('@/assets/img/index/banner.jpg'),title:'BMP管道',text:'按照相关管道安装配置，每根管道6米长，接头处必须配置一个直通按照相关'}
-      ]
+      ],
+        applicationList:[
+            {name:'油气输送行业',company:'内蒙古神州硅业有限公司',img:require('@/assets/img/index/applicationTop.jpg')},
+            {name:'油气输送行业',company:'内蒙古神州硅业有限公司',img:require('@/assets/img/index/applicationTop.jpg')},
+            {name:'油气输送行业',company:'内蒙古神州硅业有限公司',img:require('@/assets/img/index/applicationTop.jpg')},
+            {name:'油气输送行业',company:'内蒙古神州硅业有限公司',img:require('@/assets/img/index/applicationTop.jpg')},
+            {name:'油气输送行业',company:'内蒙古神州硅业有限公司',img:require('@/assets/img/index/applicationTop.jpg')},
+            {name:'油气输送行业',company:'内蒙古神州硅业有限公司',img:require('@/assets/img/index/applicationTop.jpg')},
+        ]
     }
   },
   components: {
@@ -128,7 +132,10 @@ export default {
     },
     outStyle (item) {
       this.$set(item,'active',false);
-    }
+    },
+      goNews(){
+          this.$router.push("/details")
+      }
   },
 }
 </script>
@@ -177,7 +184,7 @@ export default {
   .productText p:last-child {font-size: 14px;margin-top: 12px;}
   .productMore {width:100%;height:230px;position: relative;}
   .productMore .btn {width:200px;height:50px;text-align: center;line-height: 50px;font-size: 20px;color: #b71b30;margin:-25px auto 0;position: relative;top:50%;background: #fff;cursor: pointer;}
-  .showFiex {position: absolute;z-index: 99;background: #b71b30;top:0;left:0;width:100%;height:100%;color: #fff;}
+  .showFiex {position: absolute;z-index: 99;background: #b71b30;top:0;left:0;width:100%;height:100%;color: #fff;cursor: pointer;}
   .showFiex p:first-child {text-align: center;padding-top: 135px;font-size: 20px;}
   .showFiex p:last-child {width:80%;position: relative;margin:40px auto 0;font-size: 14px;line-height: 24px;text-align: justify;}
   .more {text-align: center;}
@@ -200,7 +207,7 @@ export default {
   .applicationIcon07 img {width:100%;height: 100%;}
   .applicationDetail {width:1180px;position: relative;overflow: hidden;margin-top: 30px;}
   .applicationDetail ul {width:105%;position: relative;overflow: hidden;}
-  .applicationDetail li {width:380px;height:380px;float:left;margin-right: 20px;margin-bottom: 20px;}
+  .applicationDetail li {width:380px;height:380px;float:left;margin-right: 20px;margin-bottom: 20px;cursor: pointer;}
   .applicationDetail img {width:380px;height:280px;margin-bottom: -4px;}
   .applicationDetail div {width:100%;height:100px;background: #fff;}
   .applicationDetail div span {display: block;text-align: center;}
@@ -215,5 +222,5 @@ export default {
   .contactBottom {width:100%;margin-top: 20px;position: relative;}
   .code {width:128px;height:48px;line-height: 48px;text-align: center;border: 1px solid #ddd;float:left;}
   .codeNum {width:128px;height:48px;border: 1px solid #ddd;line-height: 48px; float:left; margin-left: 20px;text-align:center;}
-  .btns {width:200px;height:50px;text-align: center;line-height: 50px;position: absolute;right:0;background: #b71b30;color: #fff;font-size: 16px;}
+  .btns {width:200px;height:50px;text-align: center;line-height: 50px;position: absolute;right:0;background: #b71b30;color: #fff;font-size: 16px;cursor: pointer;}
 </style>

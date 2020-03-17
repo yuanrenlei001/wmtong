@@ -32,7 +32,7 @@
   </div>
 </template>
 <script>
-    import Swiper from "swiper";//引入swiper
+    import Swiper from "swiper";
     import 'swiper/css/swiper.min.css';
     import 'element-ui/lib/theme-chalk/index.css';
     export default {

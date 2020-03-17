@@ -29,7 +29,7 @@
     import child2 from '@/components/application/product03.vue'
     import child3 from '@/components/application/product04.vue'
 
-    import Swiper from "swiper";//引入swiper
+    import Swiper from "swiper";
     import 'swiper/css/swiper.min.css';
     export default {
         name: 'index',
@@ -41,7 +41,7 @@
                 msg: 'Welcome to Your Vue.js App',
                 showMinShopTab: true,
                 addClass:'',
-                img:require('@/assets/img/application.jpg'),
+                img:require("@/assets/img/application.jpg"),
                 topList:[
                     {title:'电力行业'},
                     {title:'给排水行业'},

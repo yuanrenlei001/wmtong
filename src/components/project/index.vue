@@ -29,7 +29,7 @@
     import child2 from '@/components/project/product03.vue'
     import child3 from '@/components/project/product04.vue'
 
-    import Swiper from "swiper";//引入swiper
+    import Swiper from "swiper";
     import 'swiper/css/swiper.min.css';
     export default {
         name: 'index',

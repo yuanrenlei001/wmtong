@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-    import Swiper from "swiper";//引入swiper
+    import Swiper from "swiper";
     import 'swiper/css/swiper.min.css';
     export default {
         name: 'index',
@@ -37,7 +37,7 @@
         mounted(){
             this.swiper1 = new Swiper(".banner1", {
                 autoplay: false,
-                grabCursor: true, //鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
+                grabCursor: true,
                 slidesPerView: 4,
                 spaceBetween: 20,
                 slideShadows : true,
